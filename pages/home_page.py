@@ -1,6 +1,7 @@
 from playwright.sync_api import Page
 
 class HomePage:
+    # (This is a parameterized constructor having self and page as parameters)
     def __init__(self, page:Page):
         self.page = page
 
