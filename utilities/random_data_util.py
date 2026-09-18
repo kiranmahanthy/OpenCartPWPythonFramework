@@ -2,7 +2,7 @@ from faker import Faker
 import random
 import string
 
-
+# Faker is an app / thrid party module which is used to generate fake data.
 class RandomDataUtil:
     def __init__(self):
         self.faker = Faker()

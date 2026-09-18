@@ -9,7 +9,8 @@ class LoginPage:
         # ===== Locators =====
         self.txt_email_address = page.locator("#input-email")
         self.txt_password = page.locator("#input-password")
-        self.btn_submit = page.locator(".btn-primary")
+        #self.btn_submit = page.locator(".btn-primary")
+        self.btn_login = page.locator("input[value='Login']")
         self.txt_error_msg = page.locator(".alert.alert-danger.alert-dismissible")
 
 # ===== Action Methods =====
@@ -19,7 +20,7 @@ class LoginPage:
         try:
             self.txt_email_address.fill(email)
             self.txt_password.fill(password)
-            self.btn_submit.click()
+            self.btn_login.click()
         except Exception as e:
             print(f" Invalid User Credentials: {e}")
 
@@ -30,7 +31,7 @@ class LoginPage:
             error_text = login_page.get_login_error().inner_text()
         """
         try:
-            return self.txt_error_message
+            return self.txt_error_msg
         except Exception as e:
             print(f" Exception while fetching login error message: {e}")
             return None

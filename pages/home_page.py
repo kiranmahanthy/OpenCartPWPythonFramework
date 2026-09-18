@@ -8,9 +8,10 @@ class HomePage:
         # ===== Locators =====
         self.link_my_account = page.locator("span:has-text('My Account')")
         self.link_register = page.locator("a:has-text('Register')")
-        self.link_login = page.locator("a:has-text('Register')")
+        self.link_login = page.locator("a:has-text('Login')")
         self.txt_search = page.locator("input[name='search']")
         self.btn_search = page.locator("#search button[type='button']")
+        self.link_logout = page.locator("a:has-text('Logout')").first
 
     # ===== Action Methods =====
     # Each method represents a user interaction on the page
@@ -49,4 +50,12 @@ class HomePage:
             self.btn_search.click()
         except Exception as e:
             print(f" Exception while searching product name '{product_name}': {e}")
+            raise
+
+    def click_logout(self):
+        """Click on the 'Logout' link."""
+        try:
+            self.link_logout.click()
+        except Exception as e:
+            print(f" Exception while clicking 'Logout': {e}")
             raise
