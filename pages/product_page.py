@@ -48,6 +48,7 @@ class ProductPage:
         Click the 'Add to Cart' button to add the selected product.
         """
         try:
+            self.page.wait_for_load_state("domcontentloaded")
             self.btn_add_to_cart.click()
         except Exception as e:
             print(f"Error while clicking 'Add to Cart': {e}")
