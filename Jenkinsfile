@@ -45,6 +45,7 @@ IMPORTANT
 PURPOSE:
 Run the Playwright Python tests through Jenkins on this Mac
 and archive the generated reports.
+    // Test Jenkins automatic kick off after new commit is done.
 */
 
 pipeline {
