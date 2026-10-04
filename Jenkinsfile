@@ -51,6 +51,11 @@ pipeline {
     // Run on an available executor in this Jenkins installation.
     agent any
 
+    // Check GitHub every two minutes.
+    // Start a build only when new commits are detected.
+    triggers {
+        pollSCM('H/2 * * * *')
+    }
     // Control how Jenkins manages each build.
     options {
         // Download the repository explicitly in the first stage.
